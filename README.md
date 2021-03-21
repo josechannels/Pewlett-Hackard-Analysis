@@ -58,8 +58,6 @@ The results of this query are shown below (the conversion of the excel file to a
 |1761 |Assistant Engineer|
 |2    |Manager           |
 
-A total of 90,398 employees will be eligible for retirement.  
-These employees are distributed over 7 different job titles with employees that have "Senior Engineer" or"Senior Staff" titles comprising over 63% of the eligible employees for retirement.
 
 To determine the number of employees eligible for the mentorship program the following query was used:
 
@@ -82,8 +80,6 @@ To determine the number of employees eligible for the mentorship program the fol
 	AND (birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 	ORDER BY e.emp_no ASC;
 
-The analysis shows that there are a total of 1550 employees that can serve as mentors to train employees to fill the expected vacancies.
-
 Together, the results of the two queries show that:
 - A total of 90,398 employees will be eligible for retirement.
 - The retirement eligible employees are distributed over seven titles:
@@ -99,9 +95,4 @@ Together, the results of the two queries show that:
 
 ## Summary
 
-The analysis suggests that:
-- Increasing the number of drivers in rural areas may increase total revenue since 
-    - in rural areas each driver completed an average of 1.6 rides compared to drivers in urban areas that completed only an average of 0.67 rides 
-    - and the average fare per ride is significantly higher in rural than urban areas. 
-- Rides in rural areas may cover longer distances since the average fare per ride is higher in these settings.  If that is case, placing vehicles that are energy efficient in these areas may result in an increase in profit.
-- it may be worthwhile to increase the number of drivers in urban settings in the month of March - where there are the highest peaks of revenue.
+
