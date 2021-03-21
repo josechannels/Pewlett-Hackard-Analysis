@@ -2,8 +2,8 @@
 
 ## Project Overview
 The overall purpose of this analysis was to determine whether the Pewlett-Hackard company is prepared for the predicted wave of retiring employees.  To address this concern, the analysis focused on answering two questions:
-- How many employees are retiring per title?
-- How many employees are eligible to participate in a mentorship program aimed at promoting from within the company to fill the predicted vacancies?
+- How many employees are eligible for retirement per title?
+- How many retirement eligible employees are qualified to participate in a mentorship program aimed at training the next generation of employees to fill the predicted vacancies?
 
 ## Resources
 Data Sources: departments.csv, dept_emp.csv, dept_manager.csv, emp_info.csv, employees.csv, salaries.csv, titles.csv  
@@ -61,15 +61,41 @@ The results of this query are shown below (the conversion of the excel file to a
 A total of 90,398 employees will be eligible for retirement.  
 These employees are distributed over 7 different job titles with employees that have "Senior Engineer" or"Senior Staff" titles comprising over 63% of the eligible employees for retirement.
 
+To determine the number of employees eligible for the mentorship program the following query was used:
 
+	--mentorship eligibility table
+	SELECT DISTINCT ON (e.emp_no) 
+	e.emp_no,
+	e.first_name,
+	e.last_name,
+	e.birth_date,
+	de.from_date,
+	de.to_date,
+	ti.title
+	INTO mentorship_eligibility
+	FROM employees as e
+	INNER JOIN dept_emp as de
+	ON (e.emp_no = de.emp_no)
+	INNER JOIN titles as ti
+	ON (e.emp_no = ti.emp_no)
+	WHERE de.to_date = ('9999-01-01')
+	AND (birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+	ORDER BY e.emp_no ASC;
 
-The analysis shows that:
+The analysis shows that there are a total of 1550 employees that can serve as mentors to train employees to fill the expected vacancies.
 
-- The revenue is greatest in Urban settings, followed by Suburban and Rural (lowest).
-- The main contributor to the higher revenue in Urban settings is the significantly larger number of rides (13x number of rides in rural settings and 2.6x number of rides in suburban settings)
-- The highest average fare per ride is obtained in rural areas ($34.62), followed by rides in suburband areas ($30.97) and rides in urban areas ($24.53).
-- The average fare per driver is highest in rural areas ($55.49), followed by suburban ($39.50) and urban settings ($16.57).
-- The revenue is not constant:  The analysis of the revenue from January to end of April, aggregated on a weekly basis shows that there are peaks of revenue.  These peaks do not coincide across different city types.
+Together, the results of the two queries show that:
+- A total of 90,398 employees will be eligible for retirement.
+- The retirement eligible employees are distributed over seven titles:
+	- Senior Engineer
+	- Senior Staff
+	- Engineer
+	- Staff
+	- Technique leader
+	- Assistant Engineer
+	- Manager
+-"Senior Engineer" and "Senior Staff" retirement eligible employees comprise over 63% of all employees eligible for retirement.
+-There a total of 1550 employees that can serve as mentors to train employees to fill the expected vacancies.
 
 ## Summary
 
