@@ -46,8 +46,19 @@ The following query was used to determine the number of employees by title eligi
 	GROUP BY ut.title
 	ORDER BY COUNT(ut.title) DESC;``
 
-![](Data/retiring_titles.csv)
+The results of this query are shown below (the conversion of the excel file to a markdown table was performed using https://www.convertcsv.com/csv-to-markdown.htm):
 
+|count|title             |
+|-----|------------------|
+|29414|Senior Engineer   |
+|28254|Senior Staff      |
+|14222|Engineer          |
+|12243|Staff             |
+|4502 |Technique Leader  |
+|1761 |Assistant Engineer|
+|2    |Manager           |
+
+A total of 
 The analysis shows that:
 
 - The revenue is greatest in Urban settings, followed by Suburban and Rural (lowest).
