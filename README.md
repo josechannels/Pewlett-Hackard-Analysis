@@ -6,7 +6,7 @@ The overall purpose of this analysis was to determine whether the Pewlett-Hackar
 - How many employees are eligible to participate in a mentorship program aimed at promoting from within the company to fill the predicted vacancies?
 
 ## Resources
-Data Sources: departments.csv, dept_emp.csv, dept_manager.csv, emp_info.csv, employees.csv, salaries.csv, titles.csv
+Data Sources: departments.csv, dept_emp.csv, dept_manager.csv, emp_info.csv, employees.csv, salaries.csv, titles.csv  
 Software: PostgreSQL11, Visual Studio Code 1.53.2, QuickDBD (https://www.quickdatabasediagrams.com/)
 
 ## Results
