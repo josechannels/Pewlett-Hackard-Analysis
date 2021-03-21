@@ -94,8 +94,8 @@ Together, the results of the two queries show that:
 	- Technique leader
 	- Assistant Engineer
 	- Manager
--"Senior Engineer" and "Senior Staff" retirement eligible employees comprise over 63% of all employees eligible for retirement.
--There a total of 1550 employees that can serve as mentors to train employees to fill the expected vacancies.
+- "Senior Engineer" and "Senior Staff" retirement eligible employees comprise over 63% of all employees eligible for retirement.
+- There a total of 1550 employees that can serve as mentors to train employees to fill the expected vacancies.
 
 ## Summary
 
