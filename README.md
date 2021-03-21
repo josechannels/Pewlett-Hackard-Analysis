@@ -58,7 +58,11 @@ The results of this query are shown below (the conversion of the excel file to a
 |1761 |Assistant Engineer|
 |2    |Manager           |
 
-A total of 
+A total of 90,398 employees will be eligible for retirement.  
+These employees are distributed over 7 different job titles with employees that have "Senior Engineer" or"Senior Staff" titles comprising over 63% of the eligible employees for retirement.
+
+
+
 The analysis shows that:
 
 - The revenue is greatest in Urban settings, followed by Suburban and Rural (lowest).
