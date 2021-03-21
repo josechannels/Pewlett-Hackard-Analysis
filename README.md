@@ -46,6 +46,8 @@ The following query was used to determine the number of employees by title eligi
 	GROUP BY ut.title
 	ORDER BY COUNT(ut.title) DESC;``
 
+![](Data/retiring_titles.csv)
+
 The analysis shows that:
 
 - The revenue is greatest in Urban settings, followed by Suburban and Rural (lowest).
