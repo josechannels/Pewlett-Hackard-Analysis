@@ -172,8 +172,19 @@ and these were the results:
 |954  |Technique Leader  |
 |665  |Assistant Engineer|
 
+With this increased number of available mentors the mentor to position is greatly decreased:
 
+|title             |count retiring employees|count mentors|Ratio Employees per Mentor|
+|------------------|------------------------|-------------|--------------------------|
+|Senior Engineer   |29414                   |3996         |7                         |
+|Senior Staff      |28254                   |4914         |6                         |
+|Engineer          |14222                   |5241         |3                         |
+|Staff             |12243                   |4135         |3                         |
+|Technique Leader  |4502                    |954          |5                         |
+|Assistant Engineer|1761                    |665          |3                         |
+|Manager           |2                       |0            |na                        |
 
+All ratios, except for the manager title, are now below 10 which could make mentorship feasible to fill the upcoming predicted vacancies.
 
 
 
