@@ -121,3 +121,60 @@ The results of this query are shown below (the conversion of the excel file to a
 
 Using the results of this query and the results of the query to determine the number of retirement eligible employees we can calculate the ratio of predicted vacancies by title to the number of mentors available that hold the same title:
 
+|title             |count retiring employees|count mentors|Ratio Employees per Mentor|
+|------------------|------------------------|-------------|--------------------------|
+|Senior Engineer   |29414                   |266          |111                       |
+|Senior Staff      |28254                   |446          |63                        |
+|Engineer          |14222                   |422          |34                        |
+|Staff             |12243                   |278          |44                        |
+|Technique Leader  |4502                    |77           |58                        |
+|Assistant Engineer|1761                    |60           |29                        |
+|Manager           |2                       |0            |na                        |
+
+The analysis shows that the most senior positions, especially that of senior engineer, has the greatest shortage of mentors per predicted positions that will need to be filled.
+In an effort to bring the ratio down we queried how many mentors would be eligible if rather than only taking those with DOB in 1965, we took everyone with DOB between 1964 and 1965.
+
+This was the query used:
+
+	SELECT DISTINCT ON (e.emp_no) 
+	e.emp_no,
+	e.first_name,
+	e.last_name,
+	e.birth_date,
+	de.from_date,
+	de.to_date,
+	ti.title
+	INTO expanded_mentorship_eligibility
+	FROM employees as e
+	INNER JOIN dept_emp as de
+	ON (e.emp_no = de.emp_no)
+	INNER JOIN titles as ti
+	ON (e.emp_no = ti.emp_no)
+	WHERE de.to_date = ('9999-01-01')
+	AND (birth_date BETWEEN '1964-01-01' AND '1965-12-31')
+	ORDER BY e.emp_no ASC;
+
+	--count extended mentorship eligible employees by title
+	SELECT COUNT (me.title), me.title
+	INTO extended_mentorship_titles
+	FROM expanded_mentorship_eligibility as me
+	GROUP BY me.title
+	ORDER BY COUNT(me.title) DESC;
+
+and these were the results:
+
+|count|title             |
+|-----|------------------|
+|5241 |Engineer          |
+|4914 |Senior Staff      |
+|4135 |Staff             |
+|3996 |Senior Engineer   |
+|954  |Technique Leader  |
+|665  |Assistant Engineer|
+
+
+
+
+
+
+
