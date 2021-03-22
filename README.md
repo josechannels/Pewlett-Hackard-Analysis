@@ -95,4 +95,29 @@ Together, the results of the two queries show that:
 
 ## Summary
 
+A total of 90,398 roles will need to be filled across the company as the "silver tsunami" reaches the shore.  These roles are distributed over 7 titles, but the titles of Senior engineer and Senior staff are the most afected (63% of those retiring hold one of these titles).
+
+The observation that only 1,550 employees are eligible to serve as mentors to those qualified to feel the vacancies is worrisome because the ratio of mentors to positions is 58.  It is highly unlikely that each mentor can adequately train 58 trainees.
+
+To better understand where the number of mentors will fall short, a new query was generated to inform on what are the titles of those eligible to mentor other employees.
+
+	--count mentorship eligible employees by title
+	SELECT COUNT (me.title), me.title
+	INTO mentorship_titles
+	FROM mentorship_eligibility as me
+	GROUP BY me.title
+	ORDER BY COUNT(me.title) DESC;
+
+The results of this query are shown below (the conversion of the excel file to a markdown table was performed using https://www.convertcsv.com/csv-to-markdown.htm):
+
+|count|title             |
+|-----|------------------|
+|446  |Senior Staff      |
+|422  |Engineer          |
+|278  |Staff             |
+|266  |Senior Engineer   |
+|77   |Technique Leader  |
+|60   |Assistant Engineer|
+
+Using the results of this query and the results of the query to determine the number of retirement eligible employees we can calculate the ratio of predicted vacancies by title to the number of mentors available that hold the same title:
 
