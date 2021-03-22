@@ -186,6 +186,8 @@ With this increased number of available mentors the mentor to position is greatl
 
 All ratios, except for the manager title, are now below 10 which could make mentorship feasible to fill the upcoming predicted vacancies.
 
+Therefore, if Pewlett-Hackard recruit mentors with DOB between 1964 and 1965 there will be enough mentors to train the necessary employees to fill the predicted upcoming vacancies due to retirement.
+
 
 
 
